@@ -1,0 +1,94 @@
+\mode<presentation>
+
+% REQUIREMENTS
+
+\RequirePackage{graphicx}
+\RequirePackage{calc}
+\RequirePackage{relsize}
+
+% SETTINGS
+
+% title page
+
+\defbeamertemplate*{title page}{ltml}
+{
+    \begin{center}
+        \vfill
+
+        \vspace{1.5cm}
+
+        \begin{beamercolorbox}{title}
+            \begin{center}
+                \usebeamerfont*{title}\inserttitle
+            \end{center}
+        \end{beamercolorbox}
+
+        \vspace{0.25cm}
+
+        \begin{beamercolorbox}{author}
+            \begin{center}
+                \usebeamerfont*{author}\insertauthor
+            \end{center}
+        \end{beamercolorbox}
+
+        \vspace{0.25cm}
+
+        \begin{beamercolorbox}{institute}
+            \begin{center}
+                \usebeamerfont*{institute}{Let's talk ML in Prague}
+            \end{center}
+        \end{beamercolorbox}
+
+        \vspace{-0.25cm}
+
+        \begin{beamercolorbox}{date}
+            \begin{center}
+                \usebeamerfont*{date}\insertdate
+            \end{center}
+        \end{beamercolorbox}
+
+        \vfill
+
+    \end{center}
+
+    \newlength\twidth
+    \settowidth{\twidth}{\inserttitle}
+    \newlength\bottomstripheight
+    \setlength{\bottomstripheight}{3.3mm}
+
+    \ifdim\twidth>0.8\textwidth \vspace{-18mm} \else \vspace{-7mm} \fi%
+    \noindent\mbox{%
+    \textcolor{ltmlblack}{\hspace{-\beamer@leftmargin}%
+    \rule{\beamer@leftmargin}{\bottomstripheight}\rule{0.7\textwidth}{\bottomstripheight}\rule{\beamer@rightmargin}{\bottomstripheight}}%
+    \includegraphics[width=0.3\textwidth]{logo}}
+}
+
+\newlength\ftwidth
+\defbeamertemplate*{frametitle}{ltml}
+{
+    \vspace{0.2cm}
+
+    \begin{beamercolorbox}{frametitle}
+        \settowidth{\ftwidth}{\insertframetitle}
+        % automatically resize the font size if the title would overlap
+        \usebeamerfont*{frametitle}{\ifdim\ftwidth>\textwidth \raisebox{2pt}[\height][\depth]{\smaller[2]{\insertframetitle}} \else \insertframetitle \fi}%
+    \end{beamercolorbox}
+
+    \vspace{-0.3cm}
+
+    \noindent\textcolor{ltmlgray}{\rule{\textwidth}{0.5pt}}
+}
+
+% bigger space under items
+\newlength{\itemmargin}
+\setlength{\itemmargin}{0.25\baselineskip}
+
+\let\olditemize\itemize
+\let\oldenditemize\enditemize
+\renewenvironment{itemize}{\olditemize\addtolength{\itemsep}{\itemmargin}}{\oldenditemize}
+
+\let\oldenumerate\enumerate
+\let\oldendenumerate\endenumerate
+\renewenvironment{enumerate}{\oldenumerate\addtolength{\itemsep}{\itemmargin}}{\oldendenumerate}
+
+\mode<all>

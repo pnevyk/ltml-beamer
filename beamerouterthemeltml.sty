@@ -1,0 +1,35 @@
+\mode<presentation>
+
+% REQUIREMENTS
+
+\RequirePackage{graphicx}
+
+% SETTINGS
+
+\newlength\footlinestripheight
+\setlength{\footlinestripheight}{2.05mm}
+
+\defbeamertemplate*{footline}{ltml}
+{
+    \begin{minipage}{.85\textwidth}
+        \vspace{25mm}
+        \begin{minipage}{.25\textwidth}
+            \vspace{-2mm}
+            \hspace{\beamer@leftmargin}\usebeamerfont*{page number in head/foot}\insertframenumber/\inserttotalframenumber
+        \end{minipage}%
+        \begin{minipage}{.75\textwidth}
+            \vspace{-2mm}
+            \begin{center}
+                \usebeamerfont*{footline}{\insertauthor: \insertshorttitle}
+            \end{center}
+        \end{minipage}%
+        \linebreak%
+        \textcolor{ltmlblack}{\rule{\textwidth}{\footlinestripheight}}
+    \end{minipage}%
+    \begin{minipage}{.15\textwidth}
+        \vspace{9.8mm}
+        \hfill{\includegraphics[width=\textwidth]{logo}}
+    \end{minipage}
+}
+
+\mode<all>

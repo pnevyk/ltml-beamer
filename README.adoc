@@ -1,0 +1,28 @@
+= Let's Talk ML Prague Beamer Template
+
+This repository contains the LTML theme for Beamer for creating presentations in LaTeX.
+
+NOTE: The theme is quite bare bones now. If you need a support for a construct whose style is missing, you can file an
+issue or better contribute by pull request.
+
+== Usage
+
+* Put your content into `content.tex`.
+* Build the slides by running `make`.
+* Clean temporary files by running `make clean`.
+
+== Additional Tweaks
+
+==== Make items to fill the whole slide
+
+* In _beamerinnerthemeltml.sty_ file, find `\setlength{\itemmargin}{0.25\baselineskip}` command.
+* Change it to `\setlength{\itemmargin}{\fill}`.
+* Alternatively, you can achieve this behavior only in one particular _itemize_/_enumerate_ by using `\vfill` (or a specific `\vspace`) as follows
++
+[source, latex]
+----
+\begin{itemize}
+    \item First\vfill
+    \item Second\vfill
+\end{itemize}
+----
