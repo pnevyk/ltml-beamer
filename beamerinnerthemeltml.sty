@@ -51,12 +51,22 @@
 
     \end{center}
 
-    \newlength\twidth
-    \settowidth{\twidth}{\inserttitle}
     \newlength\bottomstripheight
     \setlength{\bottomstripheight}{3.3mm}
 
-    \ifdim\twidth>0.7\textwidth \vspace{-18mm} \else \vspace{-7mm} \fi%
+    % "line height" of one line
+    \newsavebox{\linebox}
+    \savebox{\linebox}{\parbox{\textwidth}{Lorem}}
+    \newlength\lheight
+    \setlength{\lheight}{\ht\linebox}
+
+    % "line height" of a paragraph box (potentially multiline) with inserted title
+    \newsavebox{\tbox}
+    \savebox{\tbox}{\parbox{\textwidth}{\inserttitle}}
+    \newlength\theight
+    \setlength{\theight}{\ht\tbox}
+
+    \ifdim\theight>\lheight \vspace{-18mm} \else \vspace{-7mm} \fi%
     \noindent\mbox{%
     \textcolor{ltmlblack}{\hspace{-\beamer@leftmargin}%
     \rule{\beamer@leftmargin + 0.7\textwidth + \beamer@rightmargin}{\bottomstripheight}}%
