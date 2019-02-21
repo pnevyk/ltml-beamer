@@ -56,10 +56,10 @@
     \newlength\bottomstripheight
     \setlength{\bottomstripheight}{3.3mm}
 
-    \ifdim\twidth>0.8\textwidth \vspace{-18mm} \else \vspace{-7mm} \fi%
+    \ifdim\twidth>0.7\textwidth \vspace{-18mm} \else \vspace{-7mm} \fi%
     \noindent\mbox{%
     \textcolor{ltmlblack}{\hspace{-\beamer@leftmargin}%
-    \rule{\beamer@leftmargin}{\bottomstripheight}\rule{0.7\textwidth}{\bottomstripheight}\rule{\beamer@rightmargin}{\bottomstripheight}}%
+    \rule{\beamer@leftmargin + 0.7\textwidth + \beamer@rightmargin}{\bottomstripheight}}%
     \includegraphics[width=0.3\textwidth]{logo}}
 }
 
@@ -81,7 +81,7 @@
 
 % bigger space under items
 \newlength{\itemmargin}
-\setlength{\itemmargin}{0.25\baselineskip}
+\setlength{\itemmargin}{0.3\baselineskip}
 
 \let\olditemize\itemize
 \let\oldenditemize\enditemize
