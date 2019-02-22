@@ -23,4 +23,12 @@
 \captionsetup[figure]{labelfont={color=ltmlblue}}
 \captionsetup[table]{labelfont={color=ltmlblue}}
 
+% several subjective tweaks
+
+% bold vectors
+\renewcommand\vec{\mathbf}
+% bold \emph
+\let\emph\relax
+\DeclareTextFontCommand{\emph}{\bfseries}
+
 \mode<all>
