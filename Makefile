@@ -1,3 +1,4 @@
+SHELL = /bin/bash
 DOCUMENT = content
 
 build: $(DOCUMENT).tex
