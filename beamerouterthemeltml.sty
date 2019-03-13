@@ -6,13 +6,21 @@
 
 % SETTINGS
 
+\renewcommand{\footnoterule}{%
+  \kern -2pt
+  \color{ltmlgray}\hrule width 0.5\textwidth height 0.5pt
+  \kern 2pt
+}
+
+\addtobeamertemplate{footnote}{\hsize0.8\textwidth}{}
+
 \newlength\footlinestripheight
 \setlength{\footlinestripheight}{1.95mm}
 
 \defbeamertemplate*{footline}{ltml}
 {
     \begin{minipage}{.85\textwidth}
-        \vspace{25mm}
+        \vspace{3mm}
         \begin{minipage}{.25\textwidth}
             \vspace{-2mm}
             \hspace{\beamer@leftmargin}\usebeamerfont*{page number in head/foot}\insertframenumber/\inserttotalframenumber
@@ -27,7 +35,7 @@
         \textcolor{ltmlblack}{\rule{\textwidth}{\footlinestripheight}}
     \end{minipage}%
     \begin{minipage}{.15\textwidth}%
-        \vspace{10.25mm}%
+        \vspace{-11.75mm}%
         \hfill{\includegraphics[width=\textwidth]{logo}}
     \end{minipage}
 }
